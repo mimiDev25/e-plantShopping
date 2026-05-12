@@ -4,13 +4,18 @@ import './ProductList.css'
 import CartItem from './CartItem';
 import addItem from './CartSlice';
 function ProductList({ onHomeClick }) {
+    const dispatch = useDispatch();
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false);
     // State to control the visibility of the About Us page
     const[addedToCart, setAddedToCart] = useState({});
 
-    const handleAddToCart = (index) =>{
-        
+    const handleAddToCart = (product) =>{
+        dispatch(addItem(product));
+        setAddedToCart((prevState)=> ({ 
+        ...prevState,
+        [product.name]: true,
+    }));
     }
     const plantsArray = [
         {
