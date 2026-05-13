@@ -46,6 +46,8 @@ const CartItem = ({ onContinueShopping }) => {
     return subtotal;
   };
 
+  
+
   return (
     <div className="cart-container">
       <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
@@ -78,5 +80,6 @@ const CartItem = ({ onContinueShopping }) => {
 };
 
 export default CartItem;
+
 
 
