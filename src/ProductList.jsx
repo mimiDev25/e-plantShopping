@@ -18,6 +18,10 @@ function ProductList({ onHomeClick }) {
         [product.name]: true,
     }));
     }
+    const calculateTotalItems = () => {
+        return cart ? cart.reduce((total, item) => total + item.quantity, 0) : 0
+    };
+    
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -260,16 +264,9 @@ function ProductList({ onHomeClick }) {
         setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
         setShowCart(false); // Hide the cart when navigating to About Us
     };
-    const calculateTotalItems = () =>{
-        let totalitems = 0;
-        cart.forEach(item=>{
-            totalitems += item.quantity
-        })
-        return totalitems
-    };
-
     const handleContinueShopping = (e) => {
         e.preventDefault();
+        setShowPlants(true);
         setShowCart(false);
     };
     return (
