@@ -264,11 +264,7 @@ function ProductList({ onHomeClick }) {
         setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
         setShowCart(false); // Hide the cart when navigating to About Us
     };
-    const handleContinueShopping = (e) => {
-        e.preventDefault();
-        setShowPlants(true);
-        setShowCart(false);
-    };
+    
     return (
         <div>
             <div className="navbar" style={styleObj}>
@@ -338,7 +334,7 @@ function ProductList({ onHomeClick }) {
                     ))}
                 </div>
             ) : (
-                <CartItem onContinueShopping={handleContinueShopping} />
+                <CartItem onContinueShopping={handlePlantsClick} />
             )}
         </div>
     );
