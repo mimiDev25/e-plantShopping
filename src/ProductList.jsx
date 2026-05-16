@@ -302,7 +302,7 @@ function ProductList({ onHomeClick }) {
                                     stroke-width="2" 
                                     id="mainIconPathAttribute"></path>
                                     </svg>
-                                    <span className = "cart_quantity_count">{calculateTotalItems()}</span>
+                                    <span className = "cart_quantity_count">{calculateTotalItems() > 0 ? calculateTotalItems() : ""}</span>
                                     </h1></a></div>
                 </div>
             </div>

@@ -1,7 +1,8 @@
 /* Reset some default styles */
 body, h1, ul {
-    margin: 0;
+    margin: 30px;
     padding: 0;
+    width: 100%;
 }
 
 /* Set a background color */
